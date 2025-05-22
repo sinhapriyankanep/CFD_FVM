@@ -1,0 +1,86 @@
+# 🌫️ 2D Advection-Diffusion of a Pollutant in a Rectangular Domain
+
+This repository simulates the **steady-state spreading of a pollutant** in a 2D domain under a constant velocity field using the **advection-diffusion equation**. The pollutant is injected via a Gaussian profile at the left boundary, and its evolution is tracked until a steady-state solution is reached.
+
+---
+
+## 📘 Problem Description
+
+A rectangular domain of size:
+
+\[
+L_x \times L_y = 2 \times 1 \quad (\text{in arbitrary units})
+\]
+
+is filled with a fluid of constant diffusivity \( D \). A pollutant is introduced from the left boundary \( (x = 0) \) with a **Gaussian concentration profile**, and is carried through the domain by a constant velocity field \( (u, v) \).
+
+---
+
+### 🧮 Governing Equation
+
+The **2D steady-state advection-diffusion equation** is given by:
+
+\[
+u \frac{\partial C}{\partial x} + v \frac{\partial C}{\partial y} = D \left( \frac{\partial^2 C}{\partial x^2} + \frac{\partial^2 C}{\partial y^2} \right)
+\]
+
+Where:
+- \( C(x, y) \): concentration of the pollutant
+- \( (u, v) \): velocity field components
+- \( D \): diffusion coefficient
+
+---
+
+### ⚙️ Boundary Conditions
+
+- **Left boundary (x = 0)**: Dirichlet (Gaussian)
+  
+\[
+C(0, y) = C_0 \cdot \exp\left(-\frac{(y - y_c)^2}{2\sigma^2}\right)
+\]
+
+  where:
+  - \( C_0 = 1 \): peak concentration
+  - \( y_c = \frac{L_y}{2} \): vertical center
+  - \( \sigma = \frac{L_y}{5} \): spread of the Gaussian
+
+- **Right boundary (x = Lx)**: Neumann (zero gradient)
+  
+\[
+\frac{\partial C}{\partial x} = 0
+\]
+
+- **Top and bottom boundaries (y = 0 and y = Ly)**: Neumann (zero gradient)
+  
+\[
+\frac{\partial C}{\partial y} = 0
+\]
+
+---
+
+### ⏳ Initial Condition
+
+\[
+C(x, y, t=0) = 0 \quad \forall x \in (0, L_x), y \in (0, L_y)
+\]
+
+---
+
+## 🛠️ Numerical Method
+
+The simulation uses:
+- Finite difference discretization (central difference for diffusion, upwind for advection)
+- Iterative time-stepping until convergence to a steady state
+- Dirichlet and Neumann BC enforcement
+
+---
+
+## 📂 File Structure
+
+| File | Description |
+|------|-------------|
+| `cfd_2_revisited.m` or `advection_diffusion_2D.m` | Main simulation script |
+| `pollutant_problem` | Problem description and instructions |
+| `Cfd_2` | complete solution and code  |
+
+
