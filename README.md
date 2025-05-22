@@ -48,8 +48,9 @@ This repository includes a numerical solution using the finite difference method
 
 | File | Description |
 |------|-------------|
-|`1D_unsteady_diffusion_v2.m` | Code to solve the PDE using FDM |
+|`1D_unsteady_diffusion_v2.m` | Code to solve the PDE using FVM |
 | `README.md` | Problem description and repository guide |
+| `CFD_A1` | PDF with the formulation and solution |
 
 
 
