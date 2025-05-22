@@ -48,7 +48,7 @@ This repository includes a numerical solution using the finite difference method
 
 | File | Description |
 |------|-------------|
-|`heat_solver.m` | Code to solve the PDE using FDM |
+|`1D_unsteady_diffusion_v2.m` | Code to solve the PDE using FDM |
 | `README.md` | Problem description and repository guide |
 
 
